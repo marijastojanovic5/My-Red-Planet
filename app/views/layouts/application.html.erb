@@ -11,8 +11,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-mars bg-no-repeat bg-cover">
+    <main>
+    <%= render 'layouts/navbar' %>
       <%= yield %>
     </main>
   </body>
