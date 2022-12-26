@@ -2,7 +2,7 @@
   <div class="relative">
     <div class="fixed rounded-none border-y-1 border-orange-600 bg-stone-900">
       <div class="flex justify-end h-12 items-center w-screen">
-        <%= link_to 'Picture Of The Day', picture_of_the_day_path, class: "text-xl text-orange-400 pr-5", id: "pic_of_the_day" %>
+        <li class="text-xl text-orange-400 pr-5 <%=is_active?(picture_of_the_day_path)%>" id="pic_of_the_day"><%= link_to 'Picture Of the Day', picture_of_the_day_path %></li>
         <button class="text-xl text-orange-400 pr-5">Mars Weather</button>
         <button class="text-xl text-orange-400 pr-5">Mars Rover</button>
         <button class="text-xl text-orange-400 pr-5">Close Apporach Data</button>
