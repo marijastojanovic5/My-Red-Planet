@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#pic_of_the_day.active {
+#pic_of_the_day.active,
+#mars_weather.active {
   color: #fed7aa;
 }
 li {

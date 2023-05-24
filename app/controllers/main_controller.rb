@@ -21,4 +21,8 @@ class MainController < ApplicationController
     end
   end
 
+  def mars_weather
+    reponse = HTTP.get("https://api.nasa.gov/insight_weather/?api_key=#{Rails.application.credentials.nasa_key}&feedtype=json&ver=1.0")
+  end
+
 end
