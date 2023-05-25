@@ -1,6 +1,6 @@
 require "http"
 class MainController < ApplicationController
-  def home
+  def index
   end
 
   def about
