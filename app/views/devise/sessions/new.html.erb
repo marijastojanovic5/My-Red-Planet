@@ -1,6 +1,6 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="flex items-center justify-center h-screen">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "p-2 font-mono bg-orange-200 w-1/4 mt-20 rounded-md border-y-1 border-2 border-orange-400 opacity-70" }) do |f| %>
+  <h2 class="font-bold">Log in to explore Mars planet!</h2>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -19,8 +19,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= button_tag "Log in", type: "submit" %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>

@@ -7,7 +7,9 @@
         <button class="text-xl text-orange-400 pr-5">Mars Rover</button>
         <button class="text-xl text-orange-400 pr-5">Close Apporach Data</button>
         <button class="text-xl text-orange-400 pr-5">About</button>
-        <button class="text-xl text-orange-400 pr-5">Profile</button>
+        <% if user_signed_in? %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-xl text-orange-400 pr-5" %>
+        <% end %> 
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 require "http"
 class MainController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
   end
 
@@ -15,7 +17,7 @@ class MainController < ApplicationController
       @title = response.parse["title"]
       render 'picture_of_the_day'
     else
-      flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
+      # flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
       # redirect_to default_location??
       # still need way of how I will show errors and where I will redirect users
     end

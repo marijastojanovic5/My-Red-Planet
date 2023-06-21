@@ -122,6 +122,14 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
+    letter_opener_web (1.4.1)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
@@ -253,6 +261,8 @@ DEPENDENCIES
   http
   jbuilder
   jsbundling-rails
+  letter_opener
+  letter_opener_web (~> 1.4)
   pg (~> 1.1)
   pry
   pry-nav
