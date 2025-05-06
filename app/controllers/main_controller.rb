@@ -6,6 +6,8 @@ class MainController < ApplicationController
   end
 
   def about
+    @about = "This is a sample about page."
+    render 'about'
   end
 
   def nasa
@@ -16,8 +18,8 @@ class MainController < ApplicationController
       @date = @nasa.parse["date"]
       @title = @nasa.parse["title"]
     else
-      # flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
-      # redirect_to default_location??
+      flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
+      redirect_to default_location??
     end
     # @nasa = HTTP.get("https://api.nasa.gov/planetary/apod?api_key=#{Rails.application.credentials.nasa_key}")
     # @url = @nasa.parse["url"]
