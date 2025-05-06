@@ -17,8 +17,8 @@ class MainController < ApplicationController
       @title = response.parse["title"]
       render 'picture_of_the_day'
     else
-      # flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
-      # redirect_to default_location??
+      flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
+      redirect_to default_location
     end
   end
 
