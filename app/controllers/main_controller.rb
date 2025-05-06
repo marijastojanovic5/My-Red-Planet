@@ -13,6 +13,7 @@ class MainController < ApplicationController
     # redirect_to root_path, notice: "User deleted successfully."
   end
 
+
   def picture_of_the_day
     response = HTTP.get("https://api.nasa.gov/planetary/apod?api_key=#{Rails.application.credentials.nasa_key}")
     if response.status == 200
@@ -29,6 +30,14 @@ class MainController < ApplicationController
 
   def mars_weather
     reponse = HTTP.get("https://api.nasa.gov/insight_weather/?api_key=#{Rails.application.credentials.nasa_key}&feedtype=json&ver=1.0")
+  end
+
+  private
+
+  def authenticate_user!
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "Please sign in to access this page."
+    end
   end
 
 end
