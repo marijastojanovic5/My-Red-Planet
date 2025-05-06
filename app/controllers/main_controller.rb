@@ -8,6 +8,9 @@ class MainController < ApplicationController
   def about
   end
   def delete
+    # @user = User.find(params[:id])
+    # @user.destroy
+    # redirect_to root_path, notice: "User deleted successfully."
   end
 
   def picture_of_the_day
