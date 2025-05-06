@@ -7,6 +7,9 @@ class MainController < ApplicationController
   
   def create
   end
+  
+  def update
+  def
 
   def about
   end
