@@ -9,6 +9,19 @@ class MainController < ApplicationController
   end
 
   def nasa
+    @nasa = HTTP.get("https://api.nasa.gov/planetary/apod?api_key=#{Rails.application.credentials.nasa_key}")
+    if @nasa.status == 200
+      @url = @nasa.parse["url"]
+      @description = @nasa.parse["explanation"]
+      @date = @nasa.parse["date"]
+      @title = @nasa.parse["title"]
+    else
+      # flash[:error] = "We apologize but at the moment we are unable to show you Picture of the Day. Please check again later."
+      # redirect_to default_location??
+    end
+    # @nasa = HTTP.get("https://api.nasa.gov/planetary/apod?api_key=#{Rails.application.credentials.nasa_key}")
+    # @url = @nasa.parse["url"]
+    # @description = @nasa.parse["explanation"]
   end
 
   def picture_of_the_day
