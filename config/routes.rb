@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   # made more comments here
   get '/picture_of_the_day', to: "main#picture_of_the_day"
   get '/mars_weather', to: "main#mars_weather"
+  get '/delete', to: "main#delete"
   
 end

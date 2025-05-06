@@ -7,6 +7,8 @@ class MainController < ApplicationController
 
   def about
   end
+  def delete
+  end
 
   def picture_of_the_day
     response = HTTP.get("https://api.nasa.gov/planetary/apod?api_key=#{Rails.application.credentials.nasa_key}")
