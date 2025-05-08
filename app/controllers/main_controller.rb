@@ -11,6 +11,15 @@ class MainController < ApplicationController
   end
 
   def contact
+    user = User.find_by(email: params[:email])
+    if user
+      # Send email to user
+      UserMailer.contact_email(user).deliver_now
+      flash[:notice] = "Email sent successfully."
+    else
+      flash[:error] = "User not found."
+    end
+    redirect_to root_pathgt 
   end
 
   def picture_of_the_day
