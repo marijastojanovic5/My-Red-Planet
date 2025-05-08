@@ -6,6 +6,11 @@ class MainController < ApplicationController
   end
 
   def about
+    @about = "This is a sample about page. You can add more information about your application here."
+    # render 'about'
+  end
+
+  def contact
   end
 
   def picture_of_the_day
