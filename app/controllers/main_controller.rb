@@ -3,6 +3,9 @@ class MainController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @user = current_user
+    @user = User.find(params[:id])
+    
   end
 
   def about
