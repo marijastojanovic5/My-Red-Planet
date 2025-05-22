@@ -9,6 +9,8 @@ class MainController < ApplicationController
   end
 
   def contact
+    @contact = Contact.new
+    # @contact = Contact.new
     # This is a comment
     # This is another comment
     # This is a third comment
